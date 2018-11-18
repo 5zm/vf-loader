@@ -7,7 +7,7 @@ Images
 
 #### 1. Technical verification point
 
-* File Uplod
+* File Upload
   * Asynchronous file upload using ajax and [javascript's file interface](https://developer.mozilla.org/en-US/docs/Web/API/File).
   * Without `multipart/form` data in HTTP request.
     * `multipart/form` have overhead of encode and decode, and the amount of data increases.
