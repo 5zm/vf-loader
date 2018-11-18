@@ -12,7 +12,7 @@ Images
   * Without `multipart/form` data in HTTP request.
     * `multipart/form` have overhead of encode and decode, and the amount of data increases.
 
-* File Donwload
+* File Download
   * HTTP Streaming file download using Transfer-chunked in HTTP response.
 
 If you want to know details, please see blog.(japanese only)
