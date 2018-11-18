@@ -15,6 +15,8 @@ Images
 * File Download
   * HTTP Streaming file download using Transfer-chunked in HTTP response.
 
+* SPA（Single Page Application)
+
 If you want to know details, please see blog.(japanese only)
 
 * [ajaxでマルチパートを使わずにファイルアップロードする方法](https://qiita.com/5zm/items/43d78236a295819c239a)
@@ -36,7 +38,7 @@ Since `JQuery` does not support `File`, use `XMLHttpRequest` in part.
 
 1. `git clone https://github.com/5zm/vf-loader.git`
 2. `cd vf-loader`
-3. `mvn package -Dmaven.test.skip=true`
+3. `mvn clean package -Dmaven.test.skip=true`
 4. `java -jar target\demo-0.0.1-SNAPSHOT.jar`
   * if you change port number, add `--server.port=7777` options (spring boot's feature)
 5. access `http://localhost:8888/index.html` on your web browser 
