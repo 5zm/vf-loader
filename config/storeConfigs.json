@@ -1,0 +1,19 @@
+{
+  "storeConfigs" : {
+    "tools" : {
+      "order" : 1,
+      "fileType" : "tools",
+      "fileTypeName" : "my development tools"
+    },
+    "presentations" : {
+      "order" : 2,
+      "fileType" : "presentations",
+      "fileTypeName" : "my reports, presentations, documents"
+    },
+    "reference" : {
+      "order" : 3,
+      "fileType" : "reference",
+      "fileTypeName" : "reference information"
+    }
+  }
+}

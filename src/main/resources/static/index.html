@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>upload file management</title>
+<link rel="stylesheet" type="text/css" href="common.css">
+<script src="jquery-3.3.1.min.js"></script>
+<script src="mustache.min.js"></script>
+<script src="fileManagement.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+      <div>
+        <input id="refleshButton" type="button" value="Reload">
+      </div>
+      <div id = "uploadbox">
+        <h3>File Upload</h3>
+        <form>
+        <table>
+          <tr>
+            <th class="uploadHeader">upload file</th>
+            <td><input id="uploadFile" type="file" /></td>
+          </tr>
+          <tr>
+            <th class="uploadHeader">file type</th>
+            <td>
+              <select id="uploadFileType" name="uploadFileType">
+                <option value="" label="Unselected">Unselected</option>
+              </select>
+            　             </td>
+          </tr>
+          <tr>
+            <th class="uploadHeader">message</th>
+            <td><p id="message">Please select upload file and file type.</p></td>
+          </tr>
+          <tr>
+            <th class="uploadHeader">status</th>
+            <td><progress id="uploadProgress" max="100" value="0"></progress></td>
+          </tr>
+          <tr>
+            <th class="uploadHeader"></th>
+            <td>
+              <input id="uploadButton" type="button" value="Upload" />
+              <input id="uploadClearButton" type="reset" value="Clear" />
+            </td>
+          </tr>
+        </table>
+        </form>
+      </div>
+      <div id = "target">
+      </target>
+    </div>
+</body>
+<script id="template" type="x-tmpl-mustache">
+<h3>{{storeConfig.fileTypeName}}</h3>
+<table>
+{{#isNotEmpty}}
+  <tr>
+    <th>file name</th><th>upload date</th><th>file size(Byte)</th><th>content-type</th><th>delete</th>
+  </tr>
+{{/isNotEmpty}}
+{{#fileInfoList}}
+  <tr>
+    <td><a href="/download/{{storeConfig.fileType}}/{{fileId}}">{{fileName}}</a></td>
+    <td>{{registeredDate}}</td><td>{{contentLength}}</td><td>{{contentType}}</td>
+    <td><input type="button" value="delete" name="deleteButton" id="{{storeConfig.fileType}}/{{fileId}}"></td>
+  </tr>
+{{/fileInfoList}}
+</table>
+</script>
+</html>
