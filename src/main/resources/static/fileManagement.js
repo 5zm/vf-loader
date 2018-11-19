@@ -1,8 +1,11 @@
 (function() {
+  $(window).on("load", function() {
+
   var viewReload = function() {
     $.ajax({
       type: 'GET',
       url: '/files',
+      cache: false,
       dataType: 'json'
     })
     .then(
@@ -30,7 +33,7 @@
         console.log('error');
       }
     );
-  }
+  };
   
   var refleshFileTypeSelectbox = function(json) {
     var selectBox = $('#uploadFileType');
@@ -56,6 +59,7 @@
           console.log(e.target.id);
           $.ajax({
             type: 'DELETE',
+            cache: false,
             url: e.target.id
           })
           .then(
@@ -121,9 +125,6 @@
     xhr.send(upload_file);
   };
 
-
-
-  $(window).on("load", function() {
     viewReload();
     
     document.getElementById("refleshButton").addEventListener (
